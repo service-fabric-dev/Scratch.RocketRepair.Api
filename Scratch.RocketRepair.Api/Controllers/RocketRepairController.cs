@@ -8,7 +8,7 @@ using Microsoft.Extensions.Logging;
 namespace Scratch.RocketRepair.Api.Controllers
 {
     [ApiController]
-    [Route("rocketrepair")]
+    [Route("downloads")]
     public class RocketRepairController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
@@ -25,9 +25,9 @@ namespace Scratch.RocketRepair.Api.Controllers
             _secretClient = secretClient;
         }
 
-        [HttpGet]
+        [HttpGet("v/{version}")]
         [RequestSizeLimit(75000000)]
-        public IActionResult Get()
+        public IActionResult Get([FromRoute] string version)
         {
             // Name of the share, directory, and file we'll download from
             const string shareName = "scratch-rocketrepair";
