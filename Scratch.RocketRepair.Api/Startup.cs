@@ -29,7 +29,7 @@ namespace Scratch.RocketRepair.Api
             {
                 var tenantId = "af08b93f-5508-4234-b6b1-76de1ee410f9";
                 var clientId = "380e8b17-b30f-4cdc-8535-b3629ffa3dd2";
-                var clientSecret = "bjO7Q~qNLJNLTEi.o_g1C1L-UsCnzqBA3wRH3";
+                var clientSecret = "<USELESS_CLIENT_KEY>";
                 return new SecretClient(new(Configuration.GetConnectionString("KeyVault")), new ClientSecretCredential(tenantId, clientId, clientSecret));
             });
             services.AddControllers();
